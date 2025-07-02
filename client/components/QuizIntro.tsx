@@ -140,9 +140,8 @@ export default function QuizIntro({ onStart, firstQuestion }: QuizIntroProps) {
               <p className="text-xs text-gray-500">
                 ✨ Free assessment • No credit card required • Instant results
               </p>
-            </div>
-          </div>
         </div>
+      </div>
 
       {/* Trust Indicators */}
       <div className="pb-8 px-4 md:px-6">
