@@ -104,3 +104,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Prevent button text overflow on mobile */
+  .btn-mobile-safe {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  /* Ensure proper spacing on small screens */
+  @media (max-width: 640px) {
+    .mobile-safe-padding {
+      @apply px-4;
+    }
+  }
+}

@@ -88,7 +88,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
             <Button
               type="submit"
               disabled={!isValid || isSubmitting}
-              className="w-full h-12 md:h-14 text-base md:text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-12 md:h-14 text-sm md:text-base lg:text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed px-4 md:px-6"
             >
               {isSubmitting ? (
                 <div className="flex items-center">

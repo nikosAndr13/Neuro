@@ -49,19 +49,19 @@ export default function QuizIntro({ onStart, firstQuestion }: QuizIntroProps) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 px-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 px-4 md:px-2">
               <Button
                 onClick={() => onStart()}
-                className="h-12 md:h-14 text-sm md:text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="h-12 md:h-14 text-xs md:text-sm lg:text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white shadow-lg transform hover:scale-105 transition-all duration-200 w-full max-w-full"
               >
-                Yes, this describes me
+                <span className="truncate">Yes, this describes me</span>
               </Button>
 
               <Button
                 onClick={() => onStart()}
-                className="h-12 md:h-14 text-sm md:text-lg font-semibold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="h-12 md:h-14 text-xs md:text-sm lg:text-lg font-semibold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg transform hover:scale-105 transition-all duration-200 w-full max-w-full"
               >
-                No, this doesn't describe me
+                <span className="truncate">No, this doesn't describe me</span>
               </Button>
             </div>
 

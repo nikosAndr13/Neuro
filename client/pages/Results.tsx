@@ -162,13 +162,6 @@ export default function Results({ result, userName }: ResultsProps) {
         </div>
       </section>
 
-      {/* Transformation Timeline */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <TransformationTimeline result={result} />
-        </div>
-      </section>
-
       {/* Assessment Completion Separator */}
       <section className="py-8 md:py-12 px-4 md:px-6 bg-gradient-to-r from-teal-50 to-emerald-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -227,6 +220,13 @@ export default function Results({ result, userName }: ResultsProps) {
               </svg>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Transformation Timeline */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <TransformationTimeline result={result} />
         </div>
       </section>
 
@@ -345,11 +345,16 @@ export default function Results({ result, userName }: ResultsProps) {
             <Button
               asChild
               size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-50 text-lg md:text-xl px-8 py-4 md:py-6 rounded-xl font-semibold"
+              className="bg-white text-teal-600 hover:bg-gray-50 text-sm md:text-lg lg:text-xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full sm:w-auto max-w-full"
             >
-              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={ctaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block truncate"
+              >
                 Get Lifetime Access - $49 Off
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block flex-shrink-0" />
               </a>
             </Button>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm opacity-90">
@@ -435,11 +440,16 @@ export default function Results({ result, userName }: ResultsProps) {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white text-base md:text-xl px-6 md:px-8 py-4 md:py-6 rounded-xl font-semibold"
+              className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white text-sm md:text-lg lg:text-xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full sm:w-auto max-w-full"
             >
-              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={ctaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block truncate"
+              >
                 Start Your Transformation Today - $49 Off
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block flex-shrink-0" />
               </a>
             </Button>
             <p className="text-sm text-gray-500 mt-4">
@@ -503,11 +513,16 @@ export default function Results({ result, userName }: ResultsProps) {
             <Button
               asChild
               size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-50 text-base md:text-xl px-6 md:px-8 py-4 md:py-6 rounded-xl font-semibold w-full sm:w-auto"
+              className="bg-white text-teal-600 hover:bg-gray-50 text-sm md:text-lg lg:text-xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full sm:w-auto max-w-full"
             >
-              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={ctaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block truncate"
+              >
                 Claim Your Lifetime Access - $49 Off
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block flex-shrink-0" />
               </a>
             </Button>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-sm opacity-90">

@@ -86,9 +86,19 @@ export default function ProgramBreakdown({ result }: ProgramBreakdownProps) {
     <section className="py-12 md:py-16 px-4 md:px-6 bg-white/70 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 md:mb-12">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
             Your 30-Day Nervous System Reset Journey
           </h3>
+
+          {/* Hero Image */}
+          <div className="mb-8">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2Ff72deaef67154289a48134e2e272735b?format=webp&width=800"
+              alt="30-Day Neurotoned Program Overview"
+              className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg"
+            />
+          </div>
+
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A scientifically-designed program that guides you step-by-step from
             dysregulation to optimal nervous system function
