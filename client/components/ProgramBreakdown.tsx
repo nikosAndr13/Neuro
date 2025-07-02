@@ -169,21 +169,6 @@ export default function ProgramBreakdown({ result }: ProgramBreakdownProps) {
             );
           })}
         </div>
-
-        {/* Program Guarantee */}
-        <div className="mt-12 text-center">
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 max-w-3xl mx-auto">
-            <h4 className="text-2xl font-bold text-emerald-800 mb-4">
-              30-Day Transformation Guarantee
-            </h4>
-            <p className="text-emerald-700 leading-relaxed">
-              If you don't experience significant improvement in your nervous
-              system regulation within 30 days of following the program, we'll
-              refund every penny. That's how confident we are in this
-              scientifically-backed approach.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
