@@ -1,0 +1,351 @@
+import { useState } from "react";
+import { QuizResult } from "@/lib/quizData";
+import { getResultContent, testimonials, faqs } from "@/lib/resultsData";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  CheckCircle,
+  Star,
+  Shield,
+  Clock,
+  Users,
+  ArrowRight,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
+
+interface ResultsProps {
+  result: QuizResult;
+  userName: string;
+  userEmail: string;
+}
+
+export default function Results({ result, userName }: ResultsProps) {
+  const content = getResultContent(result);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+
+  const ctaUrl =
+    "https://www.neurotoned.com/offers/sPjut2p7/checkout?coupon_code=49OFFNEUROTONEDWELCOME";
+
+  const ScoreVisualization = () => {
+    const percentage =
+      ((result.totalQuestions - result.score) / result.totalQuestions) * 100;
+    const circumference = 2 * Math.PI * 45;
+    const strokeDasharray = circumference;
+    const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+    return (
+      <div className="relative w-32 h-32 mx-auto">
+        <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke="#e5e7eb"
+            strokeWidth="8"
+            fill="none"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke={content.graphColor}
+            strokeWidth="8"
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray={strokeDasharray}
+            strokeDashoffset={strokeDashoffset}
+            className="transition-all duration-1000 ease-out"
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-gray-900">
+              {Math.round(percentage)}%
+            </div>
+            <div className="text-xs text-gray-600">Regulated</div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-violet-50">
+      {/* Hero Section */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8">
+            <Badge
+              className={`bg-${content.color}-100 text-${content.color}-800 text-lg px-4 py-2 mb-4`}
+            >
+              Your Results Are In
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Hi {userName}! 👋
+            </h1>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {content.title}
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">{content.subtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div className="order-2 md:order-1">
+              <ScoreVisualization />
+              <p className="text-sm text-gray-600 mt-4">
+                You answered "yes" to {result.score} out of{" "}
+                {result.totalQuestions} symptoms
+              </p>
+            </div>
+            <div className="order-1 md:order-2 text-left">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {content.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Insights Section */}
+      <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            What This Means For You
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-rose-200">
+              <CardContent className="p-6">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <CheckCircle className="w-5 h-5 text-rose-500 mr-2" />
+                  Your Current State
+                </h4>
+                <ul className="space-y-3">
+                  {content.insights.map((insight, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-2 h-2 bg-rose-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">{insight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-violet-200">
+              <CardContent className="p-6">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <Star className="w-5 h-5 text-violet-500 mr-2" />
+                  Immediate Steps
+                </h4>
+                <ul className="space-y-3">
+                  {content.recommendations.map((rec, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">{rec}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Transformation Section */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-violet-600 to-rose-600 rounded-3xl p-8 md:p-12 text-white text-center">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              Your 30-Day Transformation
+            </h3>
+            <p className="text-lg md:text-xl leading-relaxed mb-8 opacity-95">
+              {content.transformation}
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-violet-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
+            >
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                {content.ctaTitle}
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Details */}
+      <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+            {content.ctaTitle}
+          </h3>
+          <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {content.ctaDescription}
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="border-violet-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Clock className="w-12 h-12 text-violet-500 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">30-Day Program</h4>
+                <p className="text-gray-600">
+                  Complete nervous system transformation in just one month
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-rose-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Users className="w-12 h-12 text-rose-500 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">Expert Support</h4>
+                <p className="text-gray-600">
+                  Guided by nervous system specialists and trauma-informed
+                  coaches
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-green-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Shield className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">
+                  Guaranteed Results
+                </h4>
+                <p className="text-gray-600">
+                  100% money-back guarantee if you don't see improvement
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-violet-500 to-rose-500 hover:from-violet-600 hover:to-rose-600 text-white text-lg px-8 py-6 rounded-xl font-semibold"
+            >
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                Start Your Transformation Today - $49 Off
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+            <p className="text-sm text-gray-500 mt-4">
+              Special offer ends soon • 30-day money-back guarantee
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Real Women, Real Results
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-gray-200">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-5 h-5 text-yellow-400 fill-current"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="border-t pt-4">
+                    <p className="font-semibold text-gray-900">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.before} → {testimonial.after}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Frequently Asked Questions
+          </h3>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="border-gray-200">
+                <CardContent className="p-0">
+                  <button
+                    onClick={() =>
+                      setExpandedFaq(expandedFaq === index ? null : index)
+                    }
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="font-semibold text-gray-900">
+                      {faq.question}
+                    </span>
+                    {expandedFaq === index ? (
+                      <ChevronUp className="w-5 h-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-500" />
+                    )}
+                  </button>
+                  {expandedFaq === index && (
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-700">{faq.answer}</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-violet-600 to-rose-600 rounded-3xl p-8 md:p-12 text-white">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Ready to Transform Your Nervous System?
+            </h3>
+            <p className="text-lg mb-8 opacity-95">
+              Join thousands of women who have already reclaimed their calm,
+              energy, and joy.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-violet-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
+            >
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                Get Started Today - $49 Off
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+            <div className="mt-6 flex items-center justify-center space-x-6 text-sm opacity-90">
+              <div className="flex items-center">
+                <Shield className="w-4 h-4 mr-1" />
+                30-Day Guarantee
+              </div>
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 mr-1" />
+                Instant Access
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
