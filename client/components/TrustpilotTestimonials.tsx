@@ -27,7 +27,7 @@ const testimonials = [
 
 export default function TrustpilotTestimonials() {
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 max-sm:pt-[19px]">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
