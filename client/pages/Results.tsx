@@ -240,16 +240,6 @@ export default function Results({ result, userName }: ResultsProps) {
             <p className="text-lg md:text-xl leading-relaxed mb-8 opacity-95">
               {content.transformation}
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
-            >
-              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
-                {content.ctaTitle}
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
-            </Button>
           </div>
         </div>
       </section>
