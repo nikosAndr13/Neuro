@@ -43,7 +43,7 @@ export default function TransformationTimeline({
 
       <div className="relative">
         {/* Progress Line */}
-        <div className="absolute top-8 left-8 right-8 h-0.5 bg-gradient-to-r from-red-300 via-yellow-300 to-emerald-300"></div>
+        <div className="absolute top-8 left-8 right-8 h-0.5 bg-gradient-to-r from-red-300 via-yellow-300 to-emerald-300 sm:top-8 sm:left-8 max-sm:top-[17px] max-sm:left-10"></div>
 
         {/* Timeline Points */}
         <div className="grid grid-cols-5 gap-1 md:gap-2">
