@@ -6,10 +6,12 @@ import {
   QuizResult,
 } from "@/lib/quizData";
 import QuizQuestion from "@/components/QuizQuestion";
+import QuizIntro from "@/components/QuizIntro";
 import EmailCapture from "./EmailCapture";
 import Results from "./Results";
 
 export default function Quiz() {
+  const [showIntro, setShowIntro] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [responses, setResponses] = useState<QuizResponse[]>([]);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
@@ -20,6 +22,10 @@ export default function Quiz() {
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const canGoBack = currentQuestionIndex > 0;
+
+  const handleStartQuiz = () => {
+    setShowIntro(false);
+  };
 
   const handleAnswer = (answer: boolean) => {
     const newResponse: QuizResponse = {
@@ -70,6 +76,15 @@ export default function Quiz() {
   if (showEmailCapture) {
     return (
       <EmailCapture onSubmit={handleEmailSubmit} onBack={handleBackFromEmail} />
+    );
+  }
+
+  if (showIntro) {
+    return (
+      <QuizIntro
+        onStart={handleStartQuiz}
+        firstQuestion={quizQuestions[0].question}
+      />
     );
   }
 
