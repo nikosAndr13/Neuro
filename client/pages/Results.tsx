@@ -169,6 +169,67 @@ export default function Results({ result, userName }: ResultsProps) {
         </div>
       </section>
 
+      {/* Assessment Completion Separator */}
+      <section className="py-8 md:py-12 px-4 md:px-6 bg-gradient-to-r from-teal-50 to-emerald-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg">
+            <div className="w-3 h-3 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm md:text-base font-semibold text-gray-700">
+              Assessment Complete ✓
+            </span>
+          </div>
+
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            Now Let's Talk About Your Solution
+          </h3>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            Based on your results, here's exactly how to transform your nervous
+            system in the next 30 days...
+          </p>
+
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg max-w-2xl mx-auto">
+            <div className="flex items-center justify-center mb-4">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:text-base text-gray-600">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+                  <span>No Subscription</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+                  <span>Lifetime Access</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+                  <span>All Updates Included</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-gray-500 italic">
+              Take your time reviewing everything below - your spot is secured
+              and there's no rush to decide.
+            </p>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <div className="animate-bounce">
+              <svg
+                className="w-6 h-6 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Transformation Section */}
       <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto">
