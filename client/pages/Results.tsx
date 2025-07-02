@@ -342,21 +342,25 @@ export default function Results({ result, userName }: ResultsProps) {
               Join thousands of women who have transformed their lives. Pay
               once, access forever - including all future updates.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-50 text-sm md:text-lg lg:text-xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full sm:w-auto max-w-full"
-            >
-              <a
-                href={ctaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block truncate"
+            <div className="w-full max-w-lg mx-auto px-2 sm:px-0">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-teal-600 hover:bg-gray-50 text-xs sm:text-sm md:text-lg lg:text-xl px-3 sm:px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full min-w-0"
               >
-                Get Lifetime Access - $49 Off
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block flex-shrink-0" />
-              </a>
-            </Button>
+                <a
+                  href={ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center"
+                >
+                  <span className="truncate mr-2">
+                    Get Lifetime Access - $49 Off
+                  </span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
+                </a>
+              </Button>
+            </div>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm opacity-90">
               <div className="flex items-center justify-center">
                 <Shield className="w-4 h-4 mr-1" />
@@ -437,21 +441,25 @@ export default function Results({ result, userName }: ResultsProps) {
           </div>
 
           <div className="text-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white text-sm md:text-lg lg:text-xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full sm:w-auto max-w-full"
-            >
-              <a
-                href={ctaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block truncate"
+            <div className="w-full max-w-lg mx-auto px-2 sm:px-0">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white text-xs sm:text-sm md:text-lg lg:text-xl px-3 sm:px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full min-w-0"
               >
-                Start Your Transformation Today - $49 Off
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block flex-shrink-0" />
-              </a>
-            </Button>
+                <a
+                  href={ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center"
+                >
+                  <span className="truncate mr-2">
+                    Start Your Transformation - $49 Off
+                  </span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
+                </a>
+              </Button>
+            </div>
             <p className="text-sm text-gray-500 mt-4">
               Special offer ends soon • 30-day money-back guarantee
             </p>
@@ -510,21 +518,25 @@ export default function Results({ result, userName }: ResultsProps) {
               No rush, no pressure - but why wait another day to start feeling
               better?
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-50 text-sm md:text-lg lg:text-xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full sm:w-auto max-w-full"
-            >
-              <a
-                href={ctaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block truncate"
+            <div className="w-full max-w-lg mx-auto px-2 sm:px-0">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-teal-600 hover:bg-gray-50 text-xs sm:text-sm md:text-lg lg:text-xl px-3 sm:px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-6 rounded-xl font-semibold w-full min-w-0"
               >
-                Claim Your Lifetime Access - $49 Off
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 inline-block flex-shrink-0" />
-              </a>
-            </Button>
+                <a
+                  href={ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center"
+                >
+                  <span className="truncate mr-2">
+                    Claim Lifetime Access - $49 Off
+                  </span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
+                </a>
+              </Button>
+            </div>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-sm opacity-90">
               <div className="flex items-center justify-center">
                 <Shield className="w-4 h-4 mr-1" />

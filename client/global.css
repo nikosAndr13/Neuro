@@ -116,5 +116,26 @@
     .mobile-safe-padding {
       @apply px-4;
     }
+
+    /* Force proper button containment on mobile */
+    button,
+    .btn,
+    [role="button"] {
+      max-width: 100%;
+      min-width: 0;
+      word-break: break-word;
+    }
+
+    /* Prevent horizontal overflow */
+    * {
+      box-sizing: border-box;
+    }
+  }
+
+  /* Additional safety for very small screens */
+  @media (max-width: 375px) {
+    .mobile-safe-padding {
+      @apply px-2;
+    }
   }
 }
