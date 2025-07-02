@@ -6,8 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import TransformationTimeline from "@/components/TransformationTimeline";
 import TrustpilotTestimonials from "@/components/TrustpilotTestimonials";
+import AdditionalTestimonials from "@/components/AdditionalTestimonials";
 import ProgramBreakdown from "@/components/ProgramBreakdown";
 import PractitionersSection from "@/components/PractitionersSection";
+import USPsSection from "@/components/USPsSection";
+import GuaranteeSection from "@/components/GuaranteeSection";
 import {
   CheckCircle,
   Star,
@@ -79,33 +82,35 @@ export default function Results({ result, userName }: ResultsProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50">
       {/* Hero Section */}
-      <section className="py-16 px-6">
+      <section className="py-12 md:py-16 px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
+          <div className="mb-8 md:mb-12">
             <Badge
-              className={`bg-${content.color}-100 text-${content.color}-800 text-lg px-4 py-2 mb-4`}
+              className={`bg-${content.color}-100 text-${content.color}-800 text-base md:text-lg px-4 py-2 mb-4`}
             >
               Your Results Are In
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
               Hi {userName}! 👋
             </h1>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               {content.title}
             </h2>
-            <p className="text-xl text-gray-600 mb-8">{content.subtitle}</p>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
+              {content.subtitle}
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
             <div className="order-2 md:order-1">
               <ScoreVisualization />
-              <p className="text-sm text-gray-600 mt-4">
+              <p className="text-sm md:text-base text-gray-600 mt-4">
                 You answered "yes" to {result.score} out of{" "}
                 {result.totalQuestions} symptoms
               </p>
             </div>
             <div className="order-1 md:order-2 text-left">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 {content.description}
               </p>
             </div>
@@ -114,12 +119,12 @@ export default function Results({ result, userName }: ResultsProps) {
       </section>
 
       {/* Insights Section */}
-      <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
+      <section className="py-12 md:py-16 px-4 md:px-6 bg-white/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center leading-tight">
             What This Means For You
           </h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <Card className="border-teal-200">
               <CardContent className="p-6">
                 <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
@@ -253,19 +258,130 @@ export default function Results({ result, userName }: ResultsProps) {
         </div>
       </section>
 
-      {/* Program Breakdown */}
+      {/* Week-by-week breakdown */}
       <ProgramBreakdown result={result} />
 
-      {/* Practitioners */}
-      <PractitionersSection />
-
-      {/* Testimonials */}
+      {/* 3 reviews */}
       <TrustpilotTestimonials />
 
+      {/* 30-Day Transformation Guarantee */}
+      <GuaranteeSection />
+
+      {/* First CTA */}
+      <section className="py-12 md:py-16 px-4 md:px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-3xl p-6 md:p-12 text-white">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+              Ready to Transform Your Nervous System?
+            </h3>
+            <p className="text-lg md:text-xl mb-8 opacity-95 leading-relaxed">
+              Join thousands of women who have already reclaimed their calm,
+              energy, and joy.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-teal-600 hover:bg-gray-50 text-lg md:text-xl px-8 py-4 md:py-6 rounded-xl font-semibold"
+            >
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                Get Started Today - $49 Off
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+            <div className="mt-6 flex items-center justify-center space-x-6 text-sm opacity-90">
+              <div className="flex items-center">
+                <Shield className="w-4 h-4 mr-1" />
+                30-Day Guarantee
+              </div>
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 mr-1" />
+                Instant Access
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* USPs */}
+      <USPsSection />
+
+      {/* 3 more reviews */}
+      <AdditionalTestimonials />
+
+      {/* Experts featured */}
+      <PractitionersSection />
+
+      {/* 2nd CTA */}
+      <section className="py-12 md:py-16 px-4 md:px-6 bg-white/70 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center leading-tight">
+            {content.ctaTitle}
+          </h3>
+          <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-12 text-center max-w-2xl mx-auto leading-relaxed">
+            {content.ctaDescription}
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+            <Card className="border-teal-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Clock className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                <h4 className="text-lg md:text-xl font-semibold mb-2">
+                  30-Day Nervous System Reset
+                </h4>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Complete nervous system transformation in just one month
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-emerald-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Users className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
+                <h4 className="text-lg md:text-xl font-semibold mb-2">
+                  Expert Support
+                </h4>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Guided by nervous system specialists and trauma-informed
+                  coaches
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-teal-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Shield className="w-12 h-12 text-teal-600 mx-auto mb-4" />
+                <h4 className="text-lg md:text-xl font-semibold mb-2">
+                  Guaranteed Results
+                </h4>
+                <p className="text-gray-600 text-sm md:text-base">
+                  100% money-back guarantee if you don't see improvement
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white text-lg md:text-xl px-8 py-4 md:py-6 rounded-xl font-semibold"
+            >
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                Start Your Transformation Today - $49 Off
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+            <p className="text-sm text-gray-500 mt-4">
+              Special offer ends soon • 30-day money-back guarantee
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs */}
-      <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
+      <section className="py-12 md:py-16 px-4 md:px-6 bg-white/70 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center leading-tight">
             Frequently Asked Questions
           </h3>
           <div className="space-y-4">
@@ -299,28 +415,28 @@ export default function Results({ result, userName }: ResultsProps) {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 px-6">
+      {/* 3rd CTA */}
+      <section className="py-12 md:py-16 px-4 md:px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-3xl p-8 md:p-12 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Transform Your Nervous System?
+          <div className="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-3xl p-6 md:p-12 text-white">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+              Don't Wait Another Day to Feel Better
             </h3>
-            <p className="text-lg mb-8 opacity-95">
-              Join thousands of women who have already reclaimed their calm,
-              energy, and joy.
+            <p className="text-lg md:text-xl mb-8 opacity-95 leading-relaxed">
+              Your nervous system can't wait. Every day you stay dysregulated is
+              another day of unnecessary suffering.
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
+              className="bg-white text-teal-600 hover:bg-gray-50 text-lg md:text-xl px-8 py-4 md:py-6 rounded-xl font-semibold"
             >
               <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
-                Get Started Today - $49 Off
+                Start Healing Today - $49 Off
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
-            <div className="mt-6 flex items-center justify-center space-x-6 text-sm opacity-90">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm opacity-90">
               <div className="flex items-center">
                 <Shield className="w-4 h-4 mr-1" />
                 30-Day Guarantee
@@ -328,6 +444,10 @@ export default function Results({ result, userName }: ResultsProps) {
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-1" />
                 Instant Access
+              </div>
+              <div className="flex items-center">
+                <Users className="w-4 h-4 mr-1" />
+                Join 25,000+ Women
               </div>
             </div>
           </div>

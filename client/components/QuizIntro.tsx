@@ -35,6 +35,43 @@ export default function QuizIntro({ onStart, firstQuestion }: QuizIntroProps) {
             personalized roadmap to feeling calm, energized, and in control
           </p>
 
+          {/* Quiz Assessment Preview */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-2xl border border-white/20 mb-12 max-w-2xl mx-auto">
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center bg-teal-100 text-teal-700 rounded-full px-4 py-2 text-sm font-medium mb-4">
+                Question 1 of 30
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                {firstQuestion}
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Tap your answer to begin your assessment
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Button
+                onClick={() => onStart()}
+                className="h-14 text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
+                Yes, this describes me
+              </Button>
+
+              <Button
+                onClick={() => onStart()}
+                className="h-14 text-lg font-semibold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
+                No, this doesn't describe me
+              </Button>
+            </div>
+
+            <div className="mt-6 text-center">
+              <p className="text-xs text-gray-500">
+                ✨ Free assessment • No credit card required • Instant results
+              </p>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
             <div className="flex flex-col items-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg">
               <Brain className="w-12 h-12 text-teal-500 mb-4" />
