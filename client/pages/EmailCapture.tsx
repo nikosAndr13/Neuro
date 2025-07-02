@@ -30,7 +30,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50 flex flex-col">
       {/* Header */}
       <div className="w-full bg-white/50 backdrop-blur-sm">
-        <div className="max-w-2xl mx-auto px-6 py-4">
+        <div className="max-w-2xl mx-auto px-4 md:px-6 py-4">
           <Button
             variant="ghost"
             onClick={onBack}
@@ -43,24 +43,24 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center px-6">
+      <div className="flex-1 flex items-center justify-center px-4 md:px-6">
         <div className="w-full max-w-md">
-          <div className="text-center mb-8">
+          <div className="text-center mb-6 md:mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <Mail className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
               Almost There!
             </h2>
-            <p className="text-lg text-gray-600 mb-2">
+            <p className="text-lg md:text-xl text-gray-600 mb-2 leading-relaxed">
               Get your personalized vagal tone assessment
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm md:text-base text-gray-500">
               We'll send your detailed results and personalized recommendations
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div className="relative">
               <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input
@@ -68,7 +68,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
                 placeholder="Your first name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="pl-12 h-14 text-lg rounded-xl border-gray-200 focus:ring-teal-500 focus:border-teal-500"
+                className="pl-12 h-12 md:h-14 text-base md:text-lg rounded-xl border-gray-200 focus:ring-teal-500 focus:border-teal-500"
                 required
               />
             </div>
@@ -80,7 +80,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
                 placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-12 h-14 text-lg rounded-xl border-gray-200 focus:ring-teal-500 focus:border-teal-500"
+                className="pl-12 h-12 md:h-14 text-base md:text-lg rounded-xl border-gray-200 focus:ring-teal-500 focus:border-teal-500"
                 required
               />
             </div>
@@ -88,7 +88,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
             <Button
               type="submit"
               disabled={!isValid || isSubmitting}
-              className="w-full h-14 text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-12 md:h-14 text-base md:text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <div className="flex items-center">
