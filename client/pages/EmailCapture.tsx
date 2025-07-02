@@ -27,14 +27,14 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
     name.trim().length > 0 && email.trim().length > 0 && email.includes("@");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-violet-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50 flex flex-col">
       {/* Header */}
       <div className="w-full bg-white/50 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto px-6 py-4">
           <Button
             variant="ghost"
             onClick={onBack}
-            className="text-violet-600 hover:text-violet-700 hover:bg-violet-50"
+            className="text-teal-600 hover:text-teal-700 hover:bg-teal-50"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Quiz
@@ -46,7 +46,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <Mail className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -88,7 +88,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
             <Button
               type="submit"
               disabled={!isValid || isSubmitting}
-              className="w-full h-14 text-lg font-semibold rounded-xl bg-gradient-to-r from-violet-500 to-rose-500 hover:from-violet-600 hover:to-rose-600 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-14 text-lg font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <div className="flex items-center">

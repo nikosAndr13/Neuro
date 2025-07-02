@@ -29,11 +29,12 @@ export default function Results({ result, userName }: ResultsProps) {
     "https://www.neurotoned.com/offers/sPjut2p7/checkout?coupon_code=49OFFNEUROTONEDWELCOME";
 
   const ScoreVisualization = () => {
-    const percentage =
-      ((result.totalQuestions - result.score) / result.totalQuestions) * 100;
+    const dysregulationPercentage =
+      (result.score / result.totalQuestions) * 100;
     const circumference = 2 * Math.PI * 45;
     const strokeDasharray = circumference;
-    const strokeDashoffset = circumference - (percentage / 100) * circumference;
+    const strokeDashoffset =
+      circumference - (dysregulationPercentage / 100) * circumference;
 
     return (
       <div className="relative w-32 h-32 mx-auto">
@@ -62,9 +63,9 @@ export default function Results({ result, userName }: ResultsProps) {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <div className="text-2xl font-bold text-gray-900">
-              {Math.round(percentage)}%
+              {Math.round(dysregulationPercentage)}%
             </div>
-            <div className="text-xs text-gray-600">Regulated</div>
+            <div className="text-xs text-gray-600">Dysregulated</div>
           </div>
         </div>
       </div>
@@ -72,7 +73,7 @@ export default function Results({ result, userName }: ResultsProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-violet-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50">
       {/* Hero Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -115,16 +116,16 @@ export default function Results({ result, userName }: ResultsProps) {
             What This Means For You
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-rose-200">
+            <Card className="border-teal-200">
               <CardContent className="p-6">
                 <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                  <CheckCircle className="w-5 h-5 text-rose-500 mr-2" />
+                  <CheckCircle className="w-5 h-5 text-teal-500 mr-2" />
                   Your Current State
                 </h4>
                 <ul className="space-y-3">
                   {content.insights.map((insight, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-rose-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{insight}</span>
                     </li>
                   ))}
@@ -132,16 +133,16 @@ export default function Results({ result, userName }: ResultsProps) {
               </CardContent>
             </Card>
 
-            <Card className="border-violet-200">
+            <Card className="border-emerald-200">
               <CardContent className="p-6">
                 <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                  <Star className="w-5 h-5 text-violet-500 mr-2" />
+                  <Star className="w-5 h-5 text-emerald-500 mr-2" />
                   Immediate Steps
                 </h4>
                 <ul className="space-y-3">
                   {content.recommendations.map((rec, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{rec}</span>
                     </li>
                   ))}
@@ -155,7 +156,7 @@ export default function Results({ result, userName }: ResultsProps) {
       {/* Transformation Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-violet-600 to-rose-600 rounded-3xl p-8 md:p-12 text-white text-center">
+          <div className="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-3xl p-8 md:p-12 text-white text-center">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
               Your 30-Day Transformation
             </h3>
@@ -187,19 +188,21 @@ export default function Results({ result, userName }: ResultsProps) {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="border-violet-200 hover:shadow-lg transition-shadow">
+            <Card className="border-teal-200 hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-violet-500 mx-auto mb-4" />
-                <h4 className="text-xl font-semibold mb-2">30-Day Program</h4>
+                <Clock className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">
+                  30-Day Nervous System Reset
+                </h4>
                 <p className="text-gray-600">
                   Complete nervous system transformation in just one month
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-rose-200 hover:shadow-lg transition-shadow">
+            <Card className="border-emerald-200 hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
-                <Users className="w-12 h-12 text-rose-500 mx-auto mb-4" />
+                <Users className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
                 <h4 className="text-xl font-semibold mb-2">Expert Support</h4>
                 <p className="text-gray-600">
                   Guided by nervous system specialists and trauma-informed
@@ -208,9 +211,9 @@ export default function Results({ result, userName }: ResultsProps) {
               </CardContent>
             </Card>
 
-            <Card className="border-green-200 hover:shadow-lg transition-shadow">
+            <Card className="border-teal-200 hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
-                <Shield className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-teal-600 mx-auto mb-4" />
                 <h4 className="text-xl font-semibold mb-2">
                   Guaranteed Results
                 </h4>
@@ -225,7 +228,7 @@ export default function Results({ result, userName }: ResultsProps) {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-violet-500 to-rose-500 hover:from-violet-600 hover:to-rose-600 text-white text-lg px-8 py-6 rounded-xl font-semibold"
+              className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white text-lg px-8 py-6 rounded-xl font-semibold"
             >
               <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
                 Start Your Transformation Today - $49 Off
@@ -315,7 +318,7 @@ export default function Results({ result, userName }: ResultsProps) {
       {/* Final CTA */}
       <section className="py-16 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-violet-600 to-rose-600 rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-3xl p-8 md:p-12 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Ready to Transform Your Nervous System?
             </h3>
