@@ -68,7 +68,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
                 placeholder="Your first name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="pl-12 h-14 text-lg rounded-xl border-gray-200 focus:ring-violet-500 focus:border-violet-500"
+                className="pl-12 h-14 text-lg rounded-xl border-gray-200 focus:ring-teal-500 focus:border-teal-500"
                 required
               />
             </div>
@@ -80,7 +80,7 @@ export default function EmailCapture({ onSubmit, onBack }: EmailCaptureProps) {
                 placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-12 h-14 text-lg rounded-xl border-gray-200 focus:ring-violet-500 focus:border-violet-500"
+                className="pl-12 h-14 text-lg rounded-xl border-gray-200 focus:ring-teal-500 focus:border-teal-500"
                 required
               />
             </div>

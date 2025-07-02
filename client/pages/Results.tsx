@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { QuizResult } from "@/lib/quizData";
-import { getResultContent, testimonials, faqs } from "@/lib/resultsData";
+import { getResultContent, faqs } from "@/lib/resultsData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import TransformationTimeline from "@/components/TransformationTimeline";
+import TrustpilotTestimonials from "@/components/TrustpilotTestimonials";
 import {
   CheckCircle,
   Star,
@@ -153,8 +155,15 @@ export default function Results({ result, userName }: ResultsProps) {
         </div>
       </section>
 
-      {/* Transformation Section */}
+      {/* Transformation Timeline */}
       <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <TransformationTimeline result={result} />
+        </div>
+      </section>
+
+      {/* Transformation Section */}
+      <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-3xl p-8 md:p-12 text-white text-center">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
@@ -166,7 +175,7 @@ export default function Results({ result, userName }: ResultsProps) {
             <Button
               asChild
               size="lg"
-              className="bg-white text-violet-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
+              className="bg-white text-teal-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
             >
               <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
                 {content.ctaTitle}
@@ -243,40 +252,7 @@ export default function Results({ result, userName }: ResultsProps) {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Real Women, Real Results
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-gray-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 text-yellow-400 fill-current"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "{testimonial.text}"
-                  </p>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-gray-900">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      {testimonial.before} → {testimonial.after}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustpilotTestimonials />
 
       {/* FAQs */}
       <section className="py-16 px-6 bg-white/70 backdrop-blur-sm">
@@ -329,7 +305,7 @@ export default function Results({ result, userName }: ResultsProps) {
             <Button
               asChild
               size="lg"
-              className="bg-white text-violet-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
+              className="bg-white text-teal-600 hover:bg-gray-50 text-lg px-8 py-6 rounded-xl font-semibold"
             >
               <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
                 Get Started Today - $49 Off
