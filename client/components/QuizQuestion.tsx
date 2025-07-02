@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { QuizQuestion as QuizQuestionType } from "@/lib/quizData";
 import { getPopupForQuestion } from "@/lib/popupData";
+import { getQuestionIcon, getQuestionColor } from "@/lib/questionImages";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import SuccessPopup from "./SuccessPopup";
@@ -116,6 +117,17 @@ export default function QuizQuestion({
 
             {/* Question */}
             <div className="text-center mb-12">
+              <div className="mb-6">
+                {(() => {
+                  const IconComponent = getQuestionIcon(question.id);
+                  const iconColor = getQuestionColor(question.id);
+                  return (
+                    <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-lg">
+                      <IconComponent className={`w-8 h-8 ${iconColor}`} />
+                    </div>
+                  );
+                })()}
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 {question.question}
               </h2>

@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import TransformationTimeline from "@/components/TransformationTimeline";
 import TrustpilotTestimonials from "@/components/TrustpilotTestimonials";
+import ProgramBreakdown from "@/components/ProgramBreakdown";
+import PractitionersSection from "@/components/PractitionersSection";
 import {
   CheckCircle,
   Star,
@@ -250,6 +252,12 @@ export default function Results({ result, userName }: ResultsProps) {
           </div>
         </div>
       </section>
+
+      {/* Program Breakdown */}
+      <ProgramBreakdown result={result} />
+
+      {/* Practitioners */}
+      <PractitionersSection />
 
       {/* Testimonials */}
       <TrustpilotTestimonials />
