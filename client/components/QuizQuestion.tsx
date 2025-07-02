@@ -139,35 +139,35 @@ export default function QuizQuestion({
             </div>
 
             {/* Answer Buttons */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 px-4 max-w-lg md:max-w-none mx-auto">
               <button
                 onClick={() => handleAnswer(true)}
-                className={`group relative p-6 md:p-8 rounded-2xl text-center transition-all duration-300 transform hover:scale-105 ${
+                className={`group relative p-4 md:p-8 rounded-2xl text-center transition-all duration-300 transform hover:scale-105 ${
                   selectedAnswer === true
                     ? "bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-2xl scale-105"
                     : "bg-white hover:bg-teal-50 text-gray-900 shadow-lg hover:shadow-xl border border-teal-100"
                 }`}
               >
-                <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">
+                <div className="text-lg md:text-2xl lg:text-3xl font-bold mb-2">
                   Yes
                 </div>
-                <div className="text-sm md:text-base opacity-75">
+                <div className="text-xs md:text-base opacity-75">
                   This describes me
                 </div>
               </button>
 
               <button
                 onClick={() => handleAnswer(false)}
-                className={`group relative p-6 md:p-8 rounded-2xl text-center transition-all duration-300 transform hover:scale-105 ${
+                className={`group relative p-4 md:p-8 rounded-2xl text-center transition-all duration-300 transform hover:scale-105 ${
                   selectedAnswer === false
                     ? "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-2xl scale-105"
                     : "bg-white hover:bg-emerald-50 text-gray-900 shadow-lg hover:shadow-xl border border-emerald-100"
                 }`}
               >
-                <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">
+                <div className="text-lg md:text-2xl lg:text-3xl font-bold mb-2">
                   No
                 </div>
-                <div className="text-sm md:text-base opacity-75">
+                <div className="text-xs md:text-base opacity-75">
                   This doesn't describe me
                 </div>
               </button>

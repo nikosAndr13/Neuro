@@ -35,16 +35,24 @@ export default function TrustpilotTestimonials() {
             <img
               src="https://cdn.worldvectorlogo.com/logos/trustpilot-1.svg"
               alt="Trustpilot"
-              className="h-8 mr-3"
+              className="h-6 md:h-8 mr-3"
             />
             <div className="flex items-center">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-green-500 fill-current" />
+              {[...Array(4)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 md:w-6 md:h-6 text-green-500 fill-current"
+                />
               ))}
-              <span className="ml-2 text-xl font-bold text-gray-900">4.8</span>
+              <Star className="w-5 h-5 md:w-6 md:h-6 text-green-500 fill-current opacity-50" />
+              <span className="ml-2 text-lg md:text-xl font-bold text-gray-900">
+                4.5
+              </span>
             </div>
           </div>
-          <p className="text-gray-600">Based on 47 reviews</p>
+          <p className="text-gray-600 text-sm md:text-base">
+            Based on 40+ verified reviews
+          </p>
         </div>
 
         {/* Testimonials Grid */}

@@ -36,8 +36,8 @@ export default function TransformationTimeline({
   ];
 
   return (
-    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+    <div className="bg-white rounded-2xl p-4 md:p-8 shadow-lg">
+      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center leading-tight">
         Your 30-Day Transformation Timeline
       </h3>
 
@@ -46,12 +46,15 @@ export default function TransformationTimeline({
         <div className="absolute top-8 left-8 right-8 h-0.5 bg-gradient-to-r from-red-300 via-yellow-300 to-emerald-300"></div>
 
         {/* Timeline Points */}
-        <div className="grid grid-cols-5 gap-2">
+        <div className="grid grid-cols-5 gap-1 md:gap-2">
           {timelinePoints.map((point, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div
+              key={index}
+              className="flex flex-col items-center space-y-1 md:space-y-2"
+            >
               {/* Circle */}
               <div
-                className={`w-6 h-6 rounded-full border-4 bg-white ${
+                className={`w-5 h-5 md:w-6 md:h-6 rounded-full border-3 md:border-4 bg-white ${
                   index === 0
                     ? "border-red-500"
                     : index === timelinePoints.length - 1
@@ -61,13 +64,13 @@ export default function TransformationTimeline({
               ></div>
 
               {/* Day Label */}
-              <div className="text-xs font-medium text-gray-600 mt-2 text-center">
+              <div className="text-xs md:text-sm font-medium text-gray-600 text-center leading-tight">
                 {point.label}
               </div>
 
               {/* Dysregulation Percentage */}
               <div
-                className={`text-sm font-bold mt-1 ${
+                className={`text-sm md:text-base font-bold ${
                   index === 0
                     ? "text-red-600"
                     : index === timelinePoints.length - 1
@@ -79,7 +82,7 @@ export default function TransformationTimeline({
               </div>
 
               {/* Dysregulated label */}
-              <div className="text-xs text-gray-500 text-center">
+              <div className="text-xs text-gray-500 text-center leading-tight">
                 dysregulated
               </div>
             </div>

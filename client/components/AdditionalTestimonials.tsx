@@ -40,17 +40,21 @@ export default function AdditionalTestimonials() {
               className="h-6 md:h-8 mr-3"
             />
             <div className="flex items-center">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(4)].map((_, i) => (
                 <Star
                   key={i}
                   className="w-5 h-5 md:w-6 md:h-6 text-green-500 fill-current"
                 />
               ))}
+              <Star className="w-5 h-5 md:w-6 md:h-6 text-green-500 fill-current opacity-50" />
               <span className="ml-2 text-lg md:text-xl font-bold text-gray-900">
-                4.8
+                4.5
               </span>
             </div>
           </div>
+          <p className="text-gray-600 text-sm md:text-base">
+            Based on 40+ verified reviews
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">

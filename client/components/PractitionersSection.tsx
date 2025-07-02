@@ -7,7 +7,7 @@ const practitioners = [
     credentials: "Alexander Technique Teacher, Trauma Resolution Specialist",
     bio: "Jeri is a Somatic Experiencing™ practitioner and Alexander Technique teacher in Cape Town. She offers trauma resolution sessions focused on breath, voice, and movement, influenced by Archetypal Psychology, Roy Hart, mindfulness, and meditation. Jeri has released two albums and holds a BCOM from UCT.",
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2F7a89e2f5536c4754a89e9a066b5faeec?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2Faf9f35bccbec488982f9e4276040e5e2?format=webp&width=800",
     specialty: "Trauma resolution through breath, voice, and movement",
   },
   {
@@ -16,7 +16,7 @@ const practitioners = [
     credentials: "15+ Years Experience, MA in Psychology",
     bio: "Taryn Elise is a Yoga Teacher and Therapist with 15+ years of experience. With extensive training in India and an MA in Psychology, she offers a compassionate, therapeutic approach using Hatha, Yin, and Restorative Yoga to support emotional health and treat stress-related conditions.",
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2F6f69913c902c4ac39580056ed6b72578?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2F70393ad8f2bf4f269b64c09fa4d77998?format=webp&width=800",
     specialty: "Therapeutic yoga for emotional health and stress relief",
   },
   {
@@ -25,7 +25,7 @@ const practitioners = [
     credentials: "Integrative Therapy Specialist",
     bio: "Demi-Gea Hart is a Holistic Psychologist offering integrative therapy combining traditional and non-traditional approaches like hypnosis, breath therapy, yoga, and meditation. She focuses on mental, physical, and spiritual factors to guide individuals toward healing, growth, and transformation, helping them align with their true potential.",
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2F2c0484ba8a824f23b31b9e24933cc32f?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2F044423d145fe4cb49f74e8f2dfb4fd20?format=webp&width=800",
     specialty: "Integrative healing and spiritual transformation",
   },
   {
@@ -35,7 +35,7 @@ const practitioners = [
       "Master's in Education and Counseling, Somatic Experiencing™ Practitioner",
     bio: "Dr. Kim DiRe' is a doctor of behavioral health with a master's in education and counseling. She's certified in hypnotherapy, childhood obesity, and is a Somatic Experiencing™ practitioner. Dr. Kim has created two original trainings, authored two books, and developed a healing guide journal.",
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2Fb260a69a2e92413dbd4cf25573884005?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff6586eda61614dcc88d34c477a317a18%2Fdf8682351afa41068ec856d31ba08610?format=webp&width=800",
     specialty: "Behavioral health and somatic healing approaches",
   },
 ];
