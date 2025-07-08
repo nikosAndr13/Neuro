@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://factory.basedagents.co/agent-quickcart-90c548e8-1751998091905-izo4ya",
+      "permanent": true
+    }
+  ]
 }
