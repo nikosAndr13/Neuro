@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://factory.basedagents.co/Agent-QuickCart-90c548e8-1751998091905-izo4ya",
+      "destination": "https://factory.basedagents.co/agent-quickCart-90c548e8-1751998091905-izo4ya",
       "permanent": true
     }
   ]
